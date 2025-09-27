@@ -2,7 +2,7 @@ const audioContext = new AudioContext();
 let osc1 = null; // Declare oscillator in a scope accessible by both handlers
 
 document.addEventListener('keydown', (event) => {
-    if (event.code === 'Key1' && !osc1) {
+    if (event.code === 'KeyQ' && !osc1) {
         // Create an oscillator
         osc1 = audioContext.createOscillator(); // Assign to the shared variable
         osc1.type = 'sawtooth';
@@ -19,7 +19,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-    if (event.code === 'Key2' && !osc2) {
+    if (event.code === 'KeyW' && !osc2) {
         // Create an oscillator
         osc2 = audioContext.createOscillator(); // Assign to the shared variable
         osc2.type = 'square';
@@ -36,7 +36,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 document.addEventListener('keyup', (event) => {
-    if (event.code === 'Key1' && osc1) {
+    if (event.code === 'KeyQ' && osc1) {
         osc1.stop(); // Stop the oscillator
         osc1.disconnect(); // Disconnect from the audio graph
         osc1 = null; // Clear the reference
@@ -44,7 +44,7 @@ document.addEventListener('keyup', (event) => {
 });
 
 document.addEventListener('keyup', (event) => {
-    if (event.code === 'Key2' && osc2) {
+    if (event.code === 'KeyW' && osc2) {
         osc2.stop(); // Stop the oscillator
         osc2.disconnect(); // Disconnect from the audio graph
         osc2 = null; // Clear the reference
